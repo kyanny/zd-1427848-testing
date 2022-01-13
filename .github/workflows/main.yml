@@ -17,7 +17,7 @@ jobs:
       - name: Hello world action step
         id: hello
         #uses: docker://ghcr.io/kyanny/zd-1427848-testing/zd-1427848-testing:v3
-        uses: kyanny/zd-1427848-testing@v3
+        uses: kyanny/zd-1427848-testing
         with:
           who-to-greet: 'Mona the Octocat'
           foo: 'FOO'
