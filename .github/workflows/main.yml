@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: docker://ghcr.io/kyanny/zd-1427848-testing@v1
+        uses: docker://ghcr.io/kyanny/zd-1427848-testing/zd-1427848-testing@v1
         with:
           who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
