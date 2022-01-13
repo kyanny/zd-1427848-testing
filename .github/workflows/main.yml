@@ -15,7 +15,8 @@ jobs:
         with:
           who-to-greet: 'Mona the Octocat'
           foo: 'FOO'
-          # args: ${{ inputs.who-to-greet }}
+          #args: ${{ inputs.who-to-greet }}
+          args: "argument"
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
