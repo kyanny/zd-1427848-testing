@@ -5,10 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - name: dump input context
+      - name: dump context
         env:
+          JOB_CONTEXT: ${{ toJSON(job) }}
           INPUT_CONTEXT: ${{ toJSON(inputs) }}
-        run: echo "$INPUT_CONTEXT"
+        run: |
+          echo "$JOB_CONTEXT"
+          echo "$INPUT_CONTEXT"
       - name: Hello world action step
         id: hello
         uses: docker://ghcr.io/kyanny/zd-1427848-testing/zd-1427848-testing:v2
