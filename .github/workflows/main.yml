@@ -1,24 +1,40 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  public_action_job_1:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      - name: use public action from public repository
-        uses: kyanny/zd-1427848-testing@v4
+      - uses: kyanny/zd-1427848-testing@v4
+  public_action_job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kyanny/zd-1427848-testing@v4
         with:
           who-to-greet: 'Mona the Octocat'
           who-to-goodbye: 'Lisa'
           args: "arg 1 2 3"
-      - name: use published docker image ubuntu:latest
-        uses: docker://ubuntu:latest
+
+  dockerhub_image_job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker://ubuntu:latest
+  dockerhub_image_job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker://ubuntu:latest
         with:
           who-to-greet: 'Mona the Octocat'
           who-to-goodbye: 'Lisa'
           args: "arg 1 2 3"
-      - name: use published docker image ghcr.io/kyanny/zd-1427848-testing/zd-1427848-testing:v4
-        uses: docker://ghcr.io/kyanny/zd-1427848-testing/zd-1427848-testing:v4
+
+  ghcr_image_job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker://ghcr.io/kyanny/zd-1427848-testing/zd-1427848-testing:v4
+  ghcr_image_job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker://ghcr.io/kyanny/zd-1427848-testing/zd-1427848-testing:v4
         with:
           who-to-greet: 'Mona the Octocat'
           who-to-goodbye: 'Lisa'
