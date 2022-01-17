@@ -1,6 +1,15 @@
 #!/bin/sh -l
 
-echo "ARG: $1"
-echo "ENV:FOO: $FOO"
+echo "== ARG =="
+count=0
+for var in "$@"
+do
+    echo "$count: $var"
+    count=$((count += 1))
+done
+
+echo "== ENV =="
+printenv
+
 time=$(date)
 echo "::set-output name=time::$time"
